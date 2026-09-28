@@ -1,0 +1,24 @@
+[package]
+name = "hikari-antinuke"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hikari-utils = { path = "../../utils" }
+hikari-cache = { path = "../../cache" }
+hikari-database = { path = "../../database" }
+hikari-embeds = { path = "../../embeds" }
+tokio = { version = "1.53.1", features = ["sync"] }
+thiserror = "2.0.20"
+tracing = "0.1.44"
+twilight-model = "0.17.1"
+twilight-http = "0.17.1"
+redis = { version = "0.25", features = ["tokio-comp"] }
+deadpool-redis = "0.15"
+serde = { version = "1.0.229", features = ["derive"] }
+bincode = "1.3.3"
+twilight-util = { version = "0.17.0", features = ["builder"] }
+async-trait = "0.1.92"
+sqlx = { version = "0.9.0", features = ["postgres"] }
+dashmap = "6.2.1"
+memchr = "2.8.3"

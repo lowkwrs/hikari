@@ -1,0 +1,11 @@
+[package]
+name = "hikari-automod"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hikari-utils = { path = "../../utils" }
+tokio = { version = "1.53.1", features = ["sync"] }
+tracing = "0.1.44"
+twilight-model = "0.17.1"
+twilight-http = "0.17.1"

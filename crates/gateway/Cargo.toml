@@ -1,0 +1,15 @@
+[package]
+name = "hikari-gateway"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hikari-utils = { path = "../utils" }
+hikari-events = { path = "../events" }
+twilight-gateway = { version = "0.17.1", default-features = false, features = ["twilight-http", "simd-json", "rustls-native-roots"] }
+twilight-model = "0.17.1"
+twilight-http = "0.17.1"
+futures-util = { version = "0.3.34", default-features = false, features = ["std"] }
+tokio = { version = "1.53.1", features = ["rt-multi-thread", "macros", "sync"] }
+thiserror = "2.0.20"
+tracing = "0.1.44"

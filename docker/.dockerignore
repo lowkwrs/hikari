@@ -1,0 +1,7 @@
+target/
+.git/
+.idea/
+.env
+.github/
+**/*.rs.bk
+rust-toolchain.toml

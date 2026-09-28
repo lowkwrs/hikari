@@ -1,0 +1,37 @@
+name: PR Check (Lint & Test)
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  lint-and-check:
+    name: Lint & Check
+    runs-on: ubuntu-latest
+    env:
+      SQLX_OFFLINE: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Cache Cargo registry and target directory
+        uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "hikari-cache"
+
+      - name: Check Formatting
+        run: cargo fmt --all -- --check
+
+      - name: Run Cargo Check
+        run: cargo check --workspace --all-targets --all-features
+
+      - name: Run Clippy (Linter)
+        run: cargo clippy --workspace --all-targets --all-features -- -D warnings

@@ -1,0 +1,22 @@
+[package]
+name = "hikari-command"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hikari-utils = { path = "../utils" }
+hikari-database = { path = "../database" }
+hikari-cache = { path = "../cache" }
+hikari-antinuke = { path = "../features/antinuke" }
+hikari-automod = { path = "../features/automod" }
+hikari-embeds = { path = "../embeds" }
+hikari-premium = { path = "../features/premium" }
+tokio = { version = "1.53.1", features = ["sync"] }
+thiserror = "2.0.20"
+tracing = "0.1.44"
+twilight-model = "0.17.1"
+twilight-http = "0.17.1"
+twilight-util = { version = "0.17.0", features = ["builder"] }
+twilight-interactions = { version = "0.17.0", features = ["derive"] }
+chrono = { version = "0.4.45", features = ["serde"] }
+async-trait = "0.1.92"

@@ -1,0 +1,13 @@
+[package]
+name = "hikari-premium"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hikari-utils = { path = "../../utils" }
+hikari-database = { path = "../../database" }
+hikari-cache = { path = "../../cache" }
+tokio = { version = "1.53.1", features = ["sync"] }
+dashmap = "6.1.0"
+tracing = "0.1.44"
+sqlx = "0.9.0"

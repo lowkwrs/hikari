@@ -1,0 +1,100 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            SELECT guild_id, action_type, enabled, threshold, window_secs, punishment, log_only\n            FROM antinuke_module_config\n            WHERE guild_id = $1\n            ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "guild_id",
+        "type_info": "Int8",
+        "origin": {
+          "Table": {
+            "table": "antinuke_module_config",
+            "name": "guild_id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "action_type",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "antinuke_module_config",
+            "name": "action_type"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "enabled",
+        "type_info": "Bool",
+        "origin": {
+          "Table": {
+            "table": "antinuke_module_config",
+            "name": "enabled"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "threshold",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "antinuke_module_config",
+            "name": "threshold"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "window_secs",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "antinuke_module_config",
+            "name": "window_secs"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "punishment",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "antinuke_module_config",
+            "name": "punishment"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "log_only",
+        "type_info": "Bool",
+        "origin": {
+          "Table": {
+            "table": "antinuke_module_config",
+            "name": "log_only"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int8"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "c1231baec37782a9d8ba633b9a124b668647e5f5f4d6bed2f85bd3e8eb1c9f1f"
+}

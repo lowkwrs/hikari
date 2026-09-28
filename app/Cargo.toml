@@ -1,0 +1,23 @@
+[package]
+name = "hikari-bot"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hikari-utils = { path = "../crates/utils" }
+hikari-database = { path = "../crates/database" }
+hikari-cache = { path = "../crates/cache" }
+hikari-events = { path = "../crates/events" }
+hikari-gateway = { path = "../crates/gateway" }
+hikari-features-registry = { path = "../crates/features/registry" }
+hikari-command = { path = "../crates/command" }
+hikari-premium = { path = "../crates/features/premium" }
+hikari-embeds = { path = "../crates/embeds" }
+tokio = { version = "1.53.1", features = ["rt-multi-thread", "macros", "signal"] }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter", "json"] }
+rustls = { version = "0.23.41", features = ["ring"] }
+redis = "1.7.0"
+twilight-http = "0.17.1"
+twilight-model = "0.17.1"
+mimalloc = "0.1.43"

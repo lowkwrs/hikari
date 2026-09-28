@@ -1,0 +1,20 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            INSERT INTO antinuke_module_config (guild_id, action_type, enabled, threshold, window_secs, punishment, log_only)\n            VALUES ($1, $2, $3, $4, $5, $6, $7)\n            ON CONFLICT (guild_id, action_type) DO UPDATE SET\n                enabled = EXCLUDED.enabled,\n                threshold = EXCLUDED.threshold,\n                window_secs = EXCLUDED.window_secs,\n                punishment = EXCLUDED.punishment,\n                log_only = EXCLUDED.log_only\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int8",
+        "Text",
+        "Bool",
+        "Int4",
+        "Int4",
+        "Text",
+        "Bool"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "03c1ff828e2665c49b187ca096cf1a4a524fdda77be08b653b910ebba2853c8c"
+}

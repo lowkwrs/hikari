@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: hikari-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=waris
+      - POSTGRES_DB=postgresx
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata18:/var/lib/postgresql
+
+  redis:
+    image: redis:8.8.0-alpine
+    container_name: hikari-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+
+  bot:
+    image: ghcr.io/hikariservices/hikari:latest
+    container_name: hikari-bot
+    restart: unless-stopped
+    env_file:
+      - ../.env
+    environment:
+      - DATABASE_URL=postgresql://waris@postgres:5432/postgresx
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - postgres
+      - redis
+
+volumes:
+  pgdata18:
+  redisdata:

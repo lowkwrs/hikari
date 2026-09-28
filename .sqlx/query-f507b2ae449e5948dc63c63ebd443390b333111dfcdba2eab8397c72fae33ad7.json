@@ -1,0 +1,16 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            INSERT INTO antinuke_guild_config (guild_id, enabled, log_channel_id)\n            VALUES ($1, $2, $3)\n            ON CONFLICT (guild_id) DO UPDATE SET\n                enabled = EXCLUDED.enabled,\n                log_channel_id = EXCLUDED.log_channel_id,\n                updated_at = now()\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int8",
+        "Bool",
+        "Int8"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "f507b2ae449e5948dc63c63ebd443390b333111dfcdba2eab8397c72fae33ad7"
+}
